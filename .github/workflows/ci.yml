@@ -11,7 +11,7 @@ on:
       - 'makefile'
       - 'phpcs.xml'
       - 'phpstan.neon'
-      - '.env'
+      - '.env.example'
   pull_request:
     branches: [main, develop]
     paths:
@@ -22,7 +22,7 @@ on:
       - 'makefile'
       - 'phpcs.xml'
       - 'phpstan.neon'
-      - '.env'
+      - '.env.example'
   workflow_dispatch:
 
 jobs:
@@ -31,6 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup environment
+        run: cp .env.example .env
 
       - name: Login to Docker Hub
         env:
@@ -60,6 +63,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup environment
+        run: cp .env.example .env
 
       - name: Login to Docker Hub
         env:
