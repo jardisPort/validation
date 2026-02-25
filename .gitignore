@@ -9,3 +9,4 @@ tests/reports/
 *.cache
 *.log
 composer.lock
+.env
