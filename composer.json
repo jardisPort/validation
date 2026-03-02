@@ -1,6 +1,5 @@
 {
     "name": "jardisport/validation",
-    "version": "1.0.0",
     "description": "This package provides validation interfaces for a domain driven design approach",
     "type": "library",
     "license": "MIT",
